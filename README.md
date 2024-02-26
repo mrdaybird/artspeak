@@ -12,10 +12,10 @@ A language to create art and animation with a easy and intuitive syntax and thei
 2. Function to manipulate Objects
     - canvas.add : add object to the scene
     - (?) canvas.remove : remove a already added object, might be helpful in the repl
-3. ... WIP
+3. ... *WIP*
 
 ### Platform
 
 - Web platform using emscripten
-- native
+- Native
 
