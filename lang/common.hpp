@@ -1,0 +1,44 @@
+#pragma once 
+
+#include <cstdint>
+
+enum InterpretResult{
+	INTERPRET_OK,
+	INTERPRET_COMPILE_ERROR,
+	INTERPRET_RUNTIME_ERROR
+};
+
+typedef double Value; // guess double is just right for this use-case;
+
+enum OpCode{
+	OP_CONSTANT,
+	OP_CONSTANT_LONG,
+	OP_NEGATE,
+	OP_NIL,
+	OP_TRUE,
+	OP_FALSE,
+	OP_NOT,
+	OP_EQUAL,
+	OP_GREATER,
+	OP_LESS,
+	OP_ADD,
+	OP_SUB,
+	OP_MUL,
+	OP_DIV,
+	OP_PRINT,
+	OP_SIN,
+	OP_COS,
+	OP_TAN,
+	OP_POP,
+	OP_DEFINE_GLOBAL,
+	OP_DEFINE_GLOBAL_LONG,
+	OP_GET_GLOBAL,
+	OP_GET_GLOBAL_LONG,
+	OP_SET_GLOBAL,
+	OP_SET_GLOBAL_LONG,
+	OP_RETURN
+};
+
+#define STACK_MAX 65536
+// #define DEBUG_TRACE_EXECUTION
+#define DEBUG_PRINT_CODE
