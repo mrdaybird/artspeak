@@ -71,6 +71,10 @@ int disassembleInstruction(Chunk& chunk, int offset){
 			return simpleInstruction("OP_COS", offset);
 		case OP_TAN:
 			return simpleInstruction("OP_TAN", offset);
+		case OP_SQRT:
+			return simpleInstruction("OP_SQRT", offset);
+		case OP_POW:
+			return simpleInstruction("OP_POW", offset);
 		case OP_DEFINE_GLOBAL:
 			return constantInstruction("OP_DEFINE_GLOBAL", chunk, offset);
 		case OP_DEFINE_GLOBAL_LONG:

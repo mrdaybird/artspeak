@@ -81,6 +81,11 @@ InterpretResult VM::run(){
 			case OP_SUB: BINARY_OP(-); break;
 			case OP_MUL: BINARY_OP(*); break;
 			case OP_DIV: BINARY_OP(/); break;
+			case OP_POW:
+				b = pop();
+				a = pop();
+				push(pow(a, b));
+				break;
 			case OP_POP: pop(); break;
 			case OP_PRINT: fmt::println("{}", pop()); break;
 			case OP_SIN: push(sin(pop())); break;

@@ -171,6 +171,7 @@ static void binary(Compiler &c, bool canAssign){
 		case TOKEN_PLUS: 			c.emitByte(OP_ADD); break;
 		case TOKEN_MINUS: 			c.emitByte(OP_SUB); break;
 		case TOKEN_STAR: 			c.emitByte(OP_MUL); break;
+		case TOKEN_STAR_STAR:		c.emitByte(OP_POW); break;
 		case TOKEN_SLASH: 			c.emitByte(OP_DIV); break;
 		case TOKEN_BANG_EQUAL:		c.emitBytes(OP_EQUAL, OP_NOT); break;
 		case TOKEN_EQUAL_EQUAL: 	c.emitByte(OP_EQUAL); break;
@@ -239,6 +240,7 @@ static ParseRule getRule(TokenType type){
 	case TOKEN_SEMICOLON     : return  {PARSE_NULL,     PARSE_NULL,   PREC_NONE};
 	case TOKEN_SLASH         : return  {PARSE_NULL,     PARSE_BINARY, PREC_FACTOR};
 	case TOKEN_STAR          : return  {PARSE_NULL,     PARSE_BINARY, PREC_FACTOR};
+	case TOKEN_STAR_STAR     : return  {PARSE_NULL,     PARSE_BINARY, PREC_POW};
 	case TOKEN_BANG          : return  {PARSE_UNARY,    PARSE_NULL,   PREC_NONE};
 	case TOKEN_EQUAL         : return  {PARSE_NULL,     PARSE_NULL,   PREC_NONE};
 	case TOKEN_BANG_EQUAL    : return  {PARSE_NULL,     PARSE_BINARY,   PREC_EQUALITY};
@@ -264,7 +266,6 @@ static ParseRule getRule(TokenType type){
 	case TOKEN_SIN         	 : return  {PARSE_CALL,     PARSE_NULL,   PREC_NONE};
 	case TOKEN_COS         	 : return  {PARSE_CALL,     PARSE_NULL,   PREC_NONE};
 	case TOKEN_TAN         	 : return  {PARSE_CALL,     PARSE_NULL,   PREC_NONE};
-	case TOKEN_POW         	 : return  {PARSE_CALL,     PARSE_NULL,   PREC_NONE};
 	case TOKEN_SQRT          : return  {PARSE_CALL,     PARSE_NULL,   PREC_NONE};	
 	case TOKEN_RETURN        : return  {PARSE_NULL,     PARSE_NULL,   PREC_NONE};
 	case TOKEN_SUPER         : return  {PARSE_NULL,     PARSE_NULL,   PREC_NONE};

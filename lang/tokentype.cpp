@@ -23,6 +23,7 @@ std::string_view tokenTypeToStr(TokenType type) {
 		case TOKEN_GREATER_EQUAL: return "TOKEN_GREATER_EQUAL";
 		case TOKEN_LESS: return "TOKEN_LESS";
 		case TOKEN_LESS_EQUAL: return "TOKEN_LESS_EQUAL";
+		case TOKEN_STAR_STAR: return "TOKEN_STAR_STAR";
 		case TOKEN_IDENTIFIER: return "TOKEN_IDENTIFIER";
 		case TOKEN_STRING: return "TOKEN_STRING";
 		case TOKEN_NUMBER: return "TOKEN_NUMBER";
@@ -45,7 +46,6 @@ std::string_view tokenTypeToStr(TokenType type) {
 		case TOKEN_SIN: return "TOKEN_SIN";
 		case TOKEN_COS: return "TOKEN_COS";
 		case TOKEN_TAN: return "TOKEN_TAN";
-		case TOKEN_POW: return "TOKEN_POW";
 		case TOKEN_SQRT: return "TOKEN_SQRT";
 		case TOKEN_ERROR: return "TOKEN_ERROR";
 		case TOKEN_EOF: return "TOKEN_EOF";

@@ -110,7 +110,7 @@ TokenType Scanner::identifierType(){
 		case 'p': 
 			if(count > 1) {
 				switch(source[start+1]){
-					case 'o': return checkKeyword(2, 1, "w", TOKEN_POW);
+					//case 'o': return checkKeyword(2, 1, "w", TOKEN_POW);
 					case 'r': return checkKeyword(2, 3, "int", TOKEN_PRINT);
 				}
 			}
@@ -199,7 +199,9 @@ Token Scanner::scanToken(){
 		case '-': return makeToken(TOKEN_MINUS);
 		case '+': return makeToken(TOKEN_PLUS);
 		case '/': return makeToken(TOKEN_SLASH);
-		case '*': return makeToken(TOKEN_STAR);
+		case '*': 
+			return makeToken(
+				match('*') ? TOKEN_STAR_STAR : TOKEN_STAR);
 		case '!':
 			return makeToken(
 				match('=') ? TOKEN_BANG_EQUAL : TOKEN_BANG);

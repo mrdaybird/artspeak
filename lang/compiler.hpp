@@ -37,6 +37,7 @@ enum Precedence{
 	PREC_COMPARISON,  // < > <= >=
 	PREC_TERM,        // + -
 	PREC_FACTOR,      // * /
+	PREC_POW,		  // **
 	PREC_UNARY,       // ! -
 	PREC_CALL,        // . ()
 	PREC_PRIMARY

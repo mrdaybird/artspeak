@@ -25,10 +25,10 @@ You have four read-only variables.
 You can write an expression with these four variables and provided math functions.
 
 Supported functions and operations:
-- sin, cos, tan, sqrt
+- +, -, *, /, **(power), sin, cos, tan, sqrt
 
 Upcoming:
-- power(**/^), abs, random, and more...
+abs, random, and more...
 
 ## How? 
 
@@ -53,7 +53,15 @@ Dependencies: [fmt](https://fmt.dev/), [raylib](https://www.raylib.com/)
 
 To build for desktop:
 ```
-	cmake -S . -B build -DPLATFORM=Desktop
+	cmake -S . -B build -G Ninja -DPLATFORM=Desktop
 	cmake --build build
 ```
-To build web version see `build-web.sh`
+Then, run `./canvas` and have fun!
+
+To build web version, you will need emscripten/emsdk:
+```
+	emcmake cmake -S . -B build-web -DPLATFORM=Web -G Ninja
+	cmake --build build-web
+	cp build-web/web/* docs/
+```
+Then you can test using `emrun docs` command or use `python3 -m http.server 8080` command inside the docs folder.
