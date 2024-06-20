@@ -32,7 +32,7 @@ Upcoming:
 The language at its core is a simple bytecode interpreter written in C++.
 Thus each time you write a expression, it is compiled to stack-based bytecode, which is then evaluated on given time value and *i*,*x* and *y* attributes of each *canvas* element. (*Canvas* here refers to the animation/graphics that you see.)
 The canvas is created using raylib. 
-All this is made available to the web using emscripten!
+All this is made available to the web using wasm and emscripten!
 
 **Progress:**
 
