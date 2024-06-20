@@ -22,16 +22,17 @@ You have four read-only variables.
 You can write an expression with these four variables and provided math functions.
 
 Supported functions and operations:
-- sin, cos, tan.
+- sin, cos, tan, sqrt
 
 Upcoming:
-- power(**/^), abs, random, sqrt, and more...
-
+- power(**/^), abs, random, and more...
 
 ## How? 
 
 The language at its core is a simple bytecode interpreter written in C++.
-Thus each time you write a expression, it is compiled to stack-based bytecode, which is then evaluated on given time and *i*,*x* and *y* attributes of each *canvas* element. (*Canvas* here refers to the animation/graphics that you see.)
+Thus each time you write a expression, it is compiled to stack-based bytecode, which is then evaluated on given time value and *i*,*x* and *y* attributes of each *canvas* element. (*Canvas* here refers to the animation/graphics that you see.)
+The canvas is created using raylib. 
+All this is made available to the web using emscripten!
 
 **Progress:**
 
@@ -40,6 +41,8 @@ Thus each time you write a expression, it is compiled to stack-based bytecode, w
 - [ ] Add more functions and operations
 
 ## Using artspeak
+
+**(to be updated)**
 
 For now, I have locally tested only on my machine(linux)
 
