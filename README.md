@@ -1,6 +1,9 @@
 # Artspeak : creative coding platform
 **Use it at https://mrdaybird.github.io/artspeak/**
 
+Artspeak is a language and a platform, where you can create art in a REPL-like format.
+It is written in C++ and can be used natively on your computer as well as on the web.
+
 ## What?
 
 - At this point, it is basically a clone of [tixy.land](https://tixy.land/)
@@ -48,10 +51,9 @@ For now, I have locally tested only on my machine(linux)
 
 Dependencies: [fmt](https://fmt.dev/), [raylib](https://www.raylib.com/)
 
-Then cmake into a build folder, hopefully it should work.
-
-To build web version:
+To build for desktop:
 ```
-emcmake cmake -S . -B build-web -DPLATFORM=Web -G Ninja
-cmake --build build-web
+	cmake -S . -B build -DPLATFORM=Desktop
+	cmake --build build
 ```
+To build web version see `build-web.sh`
