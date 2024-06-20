@@ -1,0 +1,62 @@
+* {
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: "Proggy Vector";
+	src: url("ProggyVector/ProggyVector\ Regular.ttf") format("truetype");
+}
+
+html,
+body {
+	background-color: rgb(0, 0, 0, 1);
+	color: white;
+	height: 98%;
+	margin: 0;
+	padding: 0;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+	color: inherit;
+}
+
+.frame {
+	padding: 100px 10% 100px 10%;
+	/* padding: 10px 10px 10px 10px; */
+	width: 99%;
+	height: 100%;
+	font-family: sans-serif;
+}
+
+.banner {
+	color: rgb(102, 191, 255);
+}
+
+.repl {
+	font-family: 'Proggy Vector';
+	float: right;
+	width: 50%;
+	padding: 20px;
+}
+
+.code {
+	all: unset;
+	width: 75%;
+	padding: 5px 0 5px 0;
+	color: whitesmoke;
+}
+
+.result {
+	color: rgb(190, 190, 190);
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.canvas-container {
+	float: left;
+	padding: 100px;
+}

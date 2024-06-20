@@ -52,8 +52,7 @@ if(${PLATFORM} MATCHES "Web")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Os")    
     
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -sEXPORTED_FUNCTIONS=_compile,_main 
-    -sEXPORTED_RUNTIME_METHODS=ccall,stringToNewUTF8,UTF8ToString 
-    --shell-file ${CMAKE_SOURCE_DIR}/web_canvas/shell.html")
+    -sEXPORTED_RUNTIME_METHODS=ccall,stringToNewUTF8,UTF8ToString")
 
     set(RAYLIB_VERSION 5.0)
     find_package(raylib ${RAYLIB_VERSION} QUIET) # QUIET or REQUIRED
@@ -87,14 +86,7 @@ if(${PLATFORM} MATCHES "Web")
     target_compile_options(canvas_web PUBLIC "-std=c++20")
     set_target_properties(canvas_web PROPERTIES
         RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/canvas_web) 
-    
-   add_custom_command(
-        TARGET canvas_web PRE_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy
-                ${CMAKE_SOURCE_DIR}/web_canvas/style.css
-                ${CMAKE_BINARY_DIR}/canvas_web/style.css)
  
-
     set_target_properties(canvas_web PROPERTIES SUFFIX ".js")
     target_link_options(canvas_web PUBLIC "-sUSE_GLFW=3")
     target_link_libraries(canvas_web raylib fmt::fmt)

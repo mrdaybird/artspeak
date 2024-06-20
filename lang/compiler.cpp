@@ -205,6 +205,8 @@ static void funCall(Compiler &c, bool canAssign){
 		case TOKEN_SIN: c.emitByte(OP_SIN); break;
 		case TOKEN_COS: c.emitByte(OP_COS); break;
 		case TOKEN_TAN: c.emitByte(OP_TAN); break;
+		// case TOKEN_POW: c.emitByte(OP_POW); break;
+		case TOKEN_SQRT: c.emitByte(OP_SQRT); break;
 		default: c.error("Unknown function!");
 	}
 }
@@ -262,6 +264,8 @@ static ParseRule getRule(TokenType type){
 	case TOKEN_SIN         	 : return  {PARSE_CALL,     PARSE_NULL,   PREC_NONE};
 	case TOKEN_COS         	 : return  {PARSE_CALL,     PARSE_NULL,   PREC_NONE};
 	case TOKEN_TAN         	 : return  {PARSE_CALL,     PARSE_NULL,   PREC_NONE};
+	case TOKEN_POW         	 : return  {PARSE_CALL,     PARSE_NULL,   PREC_NONE};
+	case TOKEN_SQRT          : return  {PARSE_CALL,     PARSE_NULL,   PREC_NONE};	
 	case TOKEN_RETURN        : return  {PARSE_NULL,     PARSE_NULL,   PREC_NONE};
 	case TOKEN_SUPER         : return  {PARSE_NULL,     PARSE_NULL,   PREC_NONE};
 	case TOKEN_THIS          : return  {PARSE_NULL,     PARSE_NULL,   PREC_NONE};

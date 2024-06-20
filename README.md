@@ -1,15 +1,14 @@
 # Artspeak : creative coding platform
 **Use it at https://mrdaybird.github.io/artspeak/**
 
+## What?
+
 - At this point, it is basically a clone of [tixy.land](https://tixy.land/)
-
 - In future, the idea to extend features and "try" to reach something like [shadertoy](https://www.shadertoy.com/), but staying minimal at its core.
-
-## How?
-
-- [x] For desktop -> write a language from scratch and use raylib for graphics
-- [x] For web -> compile to html and wasm using emscripten
-- [ ] Add more functions and operations
+- But unlike *tixy.land*, it ships its **own language and interpreter**! What does this mean?
+	1. This means it is not dependent on the browser and javascript. 
+	2. I have full control on langauge design and features.
+	3. Better performance. (potentially?) Though, it does not mean much for *now!*
 
 ## Syntax
 
@@ -27,6 +26,18 @@ Supported functions and operations:
 
 Upcoming:
 - power(**/^), abs, random, sqrt, and more...
+
+
+## How? 
+
+The language at its core is a simple bytecode interpreter written in C++.
+Thus each time you write a expression, it is compiled to stack-based bytecode, which is then evaluated on given time and *i*,*x* and *y* attributes of each *canvas* element. (*Canvas* here refers to the animation/graphics that you see.)
+
+**Progress:**
+
+- [x] For desktop -> write a language from scratch and use raylib for graphics
+- [x] For web -> compile to javascript and wasm using emscripten
+- [ ] Add more functions and operations
 
 ## Using artspeak
 

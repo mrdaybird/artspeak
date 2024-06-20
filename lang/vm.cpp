@@ -86,6 +86,7 @@ InterpretResult VM::run(){
 			case OP_SIN: push(sin(pop())); break;
 			case OP_COS: push(cos(pop())); break;
 			case OP_TAN: push(tan(pop())); break;
+			case OP_SQRT: push(sqrt(pop())); break;
 			case OP_CONSTANT:
 				a = READ_CONSTANT();
 				push(a);

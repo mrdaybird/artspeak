@@ -45,6 +45,8 @@ std::string_view tokenTypeToStr(TokenType type) {
 		case TOKEN_SIN: return "TOKEN_SIN";
 		case TOKEN_COS: return "TOKEN_COS";
 		case TOKEN_TAN: return "TOKEN_TAN";
+		case TOKEN_POW: return "TOKEN_POW";
+		case TOKEN_SQRT: return "TOKEN_SQRT";
 		case TOKEN_ERROR: return "TOKEN_ERROR";
 		case TOKEN_EOF: return "TOKEN_EOF";
 		default: return "UNKNOWN";

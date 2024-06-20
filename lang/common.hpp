@@ -25,6 +25,8 @@ enum OpCode{
 	OP_SUB,
 	OP_MUL,
 	OP_DIV,
+	OP_POW,
+	OP_SQRT,
 	OP_PRINT,
 	OP_SIN,
 	OP_COS,
