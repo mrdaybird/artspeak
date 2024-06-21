@@ -49,7 +49,7 @@ All this is made available to the web using wasm and emscripten!
 
 For now, I have locally tested only on my machine(linux)
 
-Dependencies: [fmt](https://fmt.dev/), [raylib](https://www.raylib.com/)
+Dependencies(no need to install, cmake installs them for you): [fmt](https://fmt.dev/), [raylib](https://www.raylib.com/)
 
 To build for desktop:
 ```
